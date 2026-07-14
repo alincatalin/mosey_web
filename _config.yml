@@ -1,0 +1,7 @@
+collections:
+  changelog:
+    output: false
+
+exclude:
+  - README.md
+  - static_site
