@@ -1,0 +1,33 @@
+# Mosey
+
+> Mosey is a motion-gated podcast player for iOS and Android. Audio plays only
+> while you walk, jog, or run — stop, and the episode pauses and waits.
+> Episode length is measured in steps, not minutes. Launching August 2026.
+
+Mosey ties the thing people crave (the next episode) to the thing they keep
+meaning to do (move). The motion gate attaches movement to an existing listening
+habit instead of asking people to build a new fitness routine.
+
+## Key facts
+
+- Category: podcast player / walking habit app
+- Core mechanic: motion-gated playback — plays while moving and pauses when
+  stopped, with a grace window for traffic lights and crosswalks
+- Episodes are measured in steps; sessions generate Echoes, shareable generative
+  art drawn from cadence as organic growth rings
+- Privacy: no GPS, maps, routes, or location data; motion sensing is on-device
+- Accessibility: Adaptive Mode calibrates the gate to different paces and
+  movement styles
+- Social feed and Listen Together group walks are post-launch roadmap features
+- Pricing: free tier; Mosey Plus at $9.99/month or $49.99/year with a full trial
+- Platforms: iOS and Android, built with Kotlin and Compose Multiplatform
+
+## Pages
+
+- [Home](https://heymosey.app/): what Mosey is and how the motion gate works
+- [Build log](https://heymosey.app/log/): design, code, numbers, and mistakes on
+  the road to the August 2026 launch
+
+## Contact
+
+- Website: https://heymosey.app/
