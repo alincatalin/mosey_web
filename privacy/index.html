@@ -119,7 +119,7 @@
       <p>We also keep de-identified, aggregated episode totals. These do not include GPS data or a readable account ID.</p>
 
       <h3>On-device library</h3>
-      <p>Followed shows, episode metadata, downloads, queue, preferences, session history, progress and generated Echoes are stored locally so the app can work offline. Podcast searches and feed or audio requests go to Apple, publishers and their hosting providers, which receive normal network information such as your IP address.</p>
+      <p>Followed shows, episode metadata, downloads, queue, preferences, session history, progress and generated Echoes are stored in the app's local storage so it can work offline. Depending on your system settings, Apple or Google may include app data in a device backup. Podcast searches and feed or audio requests go to Apple, publishers and their hosting providers, which receive normal network information such as your IP address.</p>
 
       <h3>Purchases</h3>
       <p>Apple or Google processes payment. RevenueCat receives your Mosey account identifier plus product, purchase, subscription and entitlement information so purchases and premium access work. We do not receive your full card details.</p>
@@ -147,7 +147,7 @@
         <li><strong>Google Firebase</strong> for authentication, database and push messaging;</li>
         <li><strong>Render</strong> for the Mosey backend;</li>
         <li><strong>RevenueCat</strong> for subscriptions and entitlements;</li>
-        <li><strong>Apple and Google</strong> for sign-in, app distribution and payments;</li>
+        <li><strong>Apple and Google</strong> for sign-in, app distribution, payments and device backup when enabled;</li>
         <li><strong>GitHub Pages</strong> for website hosting and <strong>Tally</strong> for the launch-list form; and</li>
         <li><strong>podcast directories, publishers and media hosts</strong> when you search, follow, stream or download a show.</li>
       </ul>
@@ -156,7 +156,7 @@
 
     <section>
       <h2>How long we keep it</h2>
-      <p>Local data stays on your device until you remove it, delete your account data or uninstall the app. Account-linked service data is generally kept while your account is active and deleted when an account-deletion request completes, except where we must retain limited security, fraud-prevention, tax or legal records. A one-way hashed deletion record and de-identified aggregate episode totals may remain.</p>
+      <p>Local app data remains until you remove it, delete your account data or uninstall the app, subject to any device backups managed by your operating-system provider. Account-linked service data is generally kept while your account is active and deleted when an account-deletion request completes, except where we must retain limited security, fraud-prevention, tax or legal records. A one-way hashed deletion record and de-identified aggregate episode totals may remain.</p>
       <p>Launch-list details are kept until you unsubscribe, ask for deletion or they are no longer needed for launch communications. Providers may retain backups for a limited recovery period under their own policies. Apple and Google may retain purchase records under their legal obligations.</p>
       <p><strong>Deleting a Mosey account does not cancel an App Store or Google Play subscription.</strong> Cancel it separately in your store subscription settings.</p>
     </section>
@@ -175,7 +175,7 @@
 
     <section>
       <h2>Security and international processing</h2>
-      <p>We use transport encryption, authenticated access and service-provider safeguards designed to protect data. No system can promise absolute security. Our providers may process data in other countries; where required, we rely on recognised adequacy decisions or contractual safeguards.</p>
+      <p>Mosey account and service data is sent using transport encryption. We also use authenticated access and service-provider safeguards designed to protect data. No system can promise absolute security. Our providers may process data in other countries; where required, we rely on recognised adequacy decisions or contractual safeguards.</p>
     </section>
 
     <section>
