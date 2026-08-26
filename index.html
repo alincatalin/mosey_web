@@ -37,7 +37,7 @@
       "offers": [
         {"@type":"Offer","name":"Mosey Free","price":"0","priceCurrency":"USD"},
         {"@type":"Offer","name":"Mosey Plus Monthly","price":"9.99","priceCurrency":"USD"},
-        {"@type":"Offer","name":"Mosey Plus Annual","price":"49.99","priceCurrency":"USD"}
+        {"@type":"Offer","name":"Mosey Plus Annual","price":"59.99","priceCurrency":"USD"}
       ],
       "publisher": {"@id":"https://heymosey.app/#organization"}
     },
@@ -56,7 +56,7 @@
         {"@type":"Question","name":"Does Mosey track my location?","acceptedAnswer":{"@type":"Answer","text":"No. Mosey does not use GPS, maps, routes or location permission. Motion sensing and cadence processing happen on your device. The app needs to know that you are moving, not where you are moving."}},
         {"@type":"Question","name":"What happens when I stop at a traffic light?","acceptedAnswer":{"@type":"Answer","text":"Mosey includes a short grace window, so ordinary pauses such as traffic lights and crosswalks do not feel punishing. Adaptive Mode can also calibrate the motion gate to different paces and movement styles."}},
         {"@type":"Question","name":"What are Mosey Echoes?","acceptedAnswer":{"@type":"Answer","text":"Echoes are shareable generative artworks created from a walking session. Rings grow from your steps and cadence, so every walk leaves a distinct visual mark. They make progress visible without maps, routes or public leaderboards."}},
-        {"@type":"Question","name":"When does Mosey launch and how much will it cost?","acceptedAnswer":{"@type":"Answer","text":"Mosey launches for iOS and Android in August 2026. Core motion-gated listening is free. Mosey Plus is planned at $9.99 per month or $49.99 per year, with a full trial."}}
+        {"@type":"Question","name":"When does Mosey launch and how much will it cost?","acceptedAnswer":{"@type":"Answer","text":"Mosey launches for iOS and Android in August 2026. Core motion-gated listening is free. Mosey Plus is planned at $9.99 per month or $59.99 per year, with lower annual prices earned at 25, 75, 200 and 500 lifetime Miles."}}
       ]
     }
   ]
@@ -210,17 +210,52 @@ section{position:relative;padding:96px 0;z-index:1}
 @media(max-width:760px){.priv{grid-template-columns:1fr}}
 
 /* pricing */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;margin:0 auto}
+.billing-toggle{display:flex;align-items:center;justify-content:center;gap:4px;width:max-content;margin:0 auto 24px;padding:5px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:#100c0a}
+.billing-toggle button{border:0;border-radius:999px;background:transparent;color:var(--grey);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 15px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.billing-toggle button[aria-pressed="true"]{background:var(--cream);color:var(--ink);box-shadow:0 5px 20px rgba(0,0,0,.28)}
+.billing-toggle .save{color:var(--coral);margin-left:5px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto}
 .plan{border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:32px;background:#140e0b;position:relative}
 .plan.hot{border-color:var(--coral);background:#20140f}
+.plan.hot::before{content:"MOST POPULAR";position:absolute;top:-11px;right:22px;padding:5px 11px;border-radius:999px;background:var(--ember);color:var(--ink);font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em}
 .plan .pn{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--coral);text-transform:uppercase}
 .plan .pp{font-family:var(--disp);font-weight:800;transform:skewX(-6deg);font-size:46px;margin:12px 0 4px}
 .plan .pp small{font-size:18px;color:var(--grey)}
+.plan .billing-note{min-height:42px;color:var(--grey);font-size:13px;margin-top:2px}
 .plan ul{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px}
 .plan li{color:var(--cream2);font-size:15px;display:flex;gap:10px}
 .plan li::before{content:"—";color:var(--amber)}
 .plan .free{color:var(--amber);font-family:var(--mono);font-size:11px;letter-spacing:.12em;margin-top:6px}
-@media(max-width:640px){.plans{grid-template-columns:1fr}}
+.earn-price{max-width:1080px;margin:54px auto 0;padding:34px 32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:28px;background:linear-gradient(145deg,#18110d,#110d0c);overflow:hidden;position:relative}
+.earn-price::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-190px;background:var(--coral);opacity:.12;filter:blur(45px)}
+.earn-head{display:flex;justify-content:space-between;align-items:end;gap:24px;position:relative;z-index:1}
+.earn-head h3{font-family:var(--disp);font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1;transform:skewX(-6deg);margin-top:9px}
+.earn-head p{max-width:44ch;color:var(--cream2);font-size:15px}
+.mile-track{display:grid;grid-template-columns:repeat(5,1fr);margin-top:38px;position:relative}
+.mile-track::before{content:"";position:absolute;left:10%;right:10%;top:13px;height:2px;background:linear-gradient(90deg,var(--greyd),var(--amber),var(--coral),var(--rasp))}
+.mile-stop{position:relative;text-align:center;padding:0 8px;z-index:1}
+.mile-dot{width:28px;height:28px;border:6px solid #18110d;border-radius:50%;margin:0 auto 16px;background:var(--cream);box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.mile-stop:not(:first-child) .mile-dot{background:var(--coral);box-shadow:0 0 0 1px var(--coral),0 0 22px rgba(255,107,74,.28)}
+.mile-count{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey)}
+.mile-price{font-family:var(--disp);font-size:30px;font-weight:800;line-height:1.1;margin-top:5px;transform:skewX(-5deg)}
+.mile-save{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-top:5px;min-height:15px}
+.earn-foot{display:flex;align-items:flex-start;gap:10px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);color:var(--grey);font-size:13px}
+.earn-foot strong{color:var(--cream2);font-weight:600}
+.earn-foot .arrow{color:var(--coral);font-family:var(--mono)}
+@media(max-width:720px){
+  .plans{grid-template-columns:1fr}
+  .earn-price{padding:28px 24px}
+  .earn-head{display:block}.earn-head p{margin-top:14px}
+  .mile-track{grid-template-columns:1fr;margin:30px 0 0 6px;padding-left:27px;gap:22px}
+  .mile-track::before{left:13px;right:auto;top:13px;bottom:13px;width:2px;height:auto;background:linear-gradient(var(--greyd),var(--amber),var(--coral),var(--rasp))}
+  .mile-stop{text-align:left;padding:0;display:grid;grid-template-columns:70px 90px 1fr;align-items:center}
+  .mile-dot{position:absolute;left:-27px;margin:0;width:28px;height:28px}
+  .mile-price{margin:0}.mile-save{margin:0;min-height:0}
+}
+@media(max-width:420px){
+  .billing-toggle button{padding:9px 10px}.billing-toggle .save{display:none}
+  .mile-stop{grid-template-columns:62px 82px 1fr}.mile-price{font-size:26px}
+}
 
 /* footer */
 footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top:40px}
@@ -464,7 +499,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top
       </details>
       <details>
         <summary>When does Mosey launch and how much will it cost?</summary>
-        <p>Mosey launches for iOS and Android in August 2026. Core motion-gated listening is free. Mosey Plus is planned at $9.99 per month or $49.99 per year, with a full trial.</p>
+        <p>Mosey launches for iOS and Android in August 2026. Core motion-gated listening is free. Mosey Plus is planned at $9.99 per month or $59.99 per year. Walk with your podcasts to unlock lower annual prices at 25, 75, 200 and 500 lifetime Miles.</p>
       </details>
     </div>
   </div>
@@ -476,13 +511,18 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top
     <div class="shead reveal" style="margin:0 auto 44px;text-align:center">
       <div class="eyebrow">Simple &amp; honest</div>
       <h2>Moving is free. Forever.</h2>
-      <p style="margin-left:auto;margin-right:auto">The gate, listening, goals, streaks and Echoes never cost a thing. Plus adds delight, not health.</p>
+      <p style="margin-left:auto;margin-right:auto">The gate, listening, goals, streaks and Echoes never cost a thing. Plus adds delight — and walking earns a better annual price.</p>
+    </div>
+    <div class="billing-toggle reveal" role="group" aria-label="Choose billing period">
+      <button type="button" data-period="yearly" aria-pressed="true">Yearly <span class="save">Save 50%</span></button>
+      <button type="button" data-period="monthly" aria-pressed="false">Monthly</button>
     </div>
     <div class="plans">
       <div class="plan reveal">
         <div class="pn">Free</div>
-        <div class="pp">$0</div>
+        <div class="pp">$0<small> / forever</small></div>
         <div class="free">MOVEMENT IS NEVER PAYWALLED</div>
+        <div class="billing-note">No card. No countdown.</div>
         <ul>
           <li>Unlimited gated listening</li>
           <li>Daily sides &amp; healthy streaks</li>
@@ -493,8 +533,9 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top
       </div>
       <div class="plan hot reveal">
         <div class="pn">Mosey Plus</div>
-        <div class="pp">$49.99<small> / yr</small></div>
-        <div class="free">OR $9.99 / MONTH · FULL TRIAL</div>
+        <div class="pp"><span id="plus-price">$59.99</span><small id="plus-period"> / year</small></div>
+        <div class="free" id="plus-kicker">JUST $5 / MONTH · BILLED YEARLY</div>
+        <div class="billing-note" id="plus-note">Then walk the price down for your next annual billing cycle.</div>
         <ul>
           <li>Animated Echoes — living art</li>
           <li>Unlimited shows &amp; auto-downloads</li>
@@ -502,6 +543,51 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top
           <li>Deep weekly recaps &amp; app icons</li>
         </ul>
         <a class="btn ember" href="#tally-open=zxo0G8&tally-layout=modal&tally-width=550&tally-emoji-text=👋&tally-emoji-animation=tada&tally-auto-close=2000&tally-form-events-forwarding=1" data-tally-open="zxo0G8" data-tally-layout="modal" data-tally-width="550" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" style="width:100%;justify-content:center"><span>Join August launch list</span></a>
+      </div>
+    </div>
+    <div class="earn-price reveal">
+      <div class="earn-head">
+        <div>
+          <div class="eyebrow">Earn your price</div>
+          <h3>Every marker lowers the year ahead.</h3>
+        </div>
+        <p>Lifetime Miles add up whenever you walk with a podcast. Reach a marker and that lower annual price stays unlocked.</p>
+      </div>
+      <div class="mile-track" aria-label="Annual price milestones">
+        <div class="mile-stop">
+          <div class="mile-dot"></div>
+          <div class="mile-count">Start</div>
+          <div class="mile-price">$59.99</div>
+          <div class="mile-save">Base annual</div>
+        </div>
+        <div class="mile-stop">
+          <div class="mile-dot"></div>
+          <div class="mile-count">25 Miles</div>
+          <div class="mile-price">$49.99</div>
+          <div class="mile-save">Save $10 / year</div>
+        </div>
+        <div class="mile-stop">
+          <div class="mile-dot"></div>
+          <div class="mile-count">75 Miles</div>
+          <div class="mile-price">$39.99</div>
+          <div class="mile-save">Save $20 / year</div>
+        </div>
+        <div class="mile-stop">
+          <div class="mile-dot"></div>
+          <div class="mile-count">200 Miles</div>
+          <div class="mile-price">$29.99</div>
+          <div class="mile-save">Save $30 / year</div>
+        </div>
+        <div class="mile-stop">
+          <div class="mile-dot"></div>
+          <div class="mile-count">500 Miles</div>
+          <div class="mile-price">$19.99</div>
+          <div class="mile-save">Save $40 / year</div>
+        </div>
+      </div>
+      <div class="earn-foot">
+        <span class="arrow">→</span>
+        <span><strong>For your next billing cycle:</strong> choose your unlocked annual plan in Mosey before renewal. Store confirmation is required; your subscription is never switched without you.</span>
       </div>
     </div>
   </div>
@@ -543,6 +629,20 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;margin-top
 <script>
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const billingCopy={
+  yearly:{price:'$59.99',period:' / year',kicker:'JUST $5 / MONTH · BILLED YEARLY',note:'Then walk the price down for your next annual billing cycle.'},
+  monthly:{price:'$9.99',period:' / month',kicker:'BILLED MONTHLY · CANCEL ANYTIME',note:'Miles unlock lower annual prices whenever you are ready to switch.'}
+};
+document.querySelectorAll('.billing-toggle button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const copy=billingCopy[button.dataset.period];
+    document.querySelectorAll('.billing-toggle button').forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
+    document.getElementById('plus-price').textContent=copy.price;
+    document.getElementById('plus-period').textContent=copy.period;
+    document.getElementById('plus-kicker').textContent=copy.kicker;
+    document.getElementById('plus-note').textContent=copy.note;
+  });
+});
 </script>
 </body>
 </html>
