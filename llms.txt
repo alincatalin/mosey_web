@@ -27,6 +27,10 @@ habit instead of asking people to build a new fitness routine.
 - [Home](https://heymosey.app/): what Mosey is and how the motion gate works
 - [Build log](https://heymosey.app/log/): design, code, numbers, and mistakes on
   the road to the August 2026 launch
+- [Privacy policy](https://heymosey.app/privacy/): what Mosey collects, why,
+  how long it is kept, and users' privacy rights
+- [Delete account and data](https://heymosey.app/delete-data/): in-app and email
+  instructions for requesting permanent account and data deletion
 
 ## Contact
 
